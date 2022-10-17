@@ -14,28 +14,29 @@ export const getTickets = async (req, res) => {
 export const getTicket = async (req, res) => {
     try {
         const pool = await getConnection()
-    const result = await pool.request()
-        .input('ticket_id', sql.VarChar, req.params.ticket_id)
-        .query(querys.getTicket)
-    res.json(result.recordset[0])
+        const result = await pool.request()
+            .input('ticket_id', sql.VarChar, req.params.ticket_id)
+            .query(querys.getTicket)
+        res.json(result.recordset[0])
 
     } catch (error) {
         res.status(500)
-        res.send(error.message)        
+        res.send(error.message)
     }
 }
 
 export const createTicket = async (req, res) => {
     try {
         const pool = await getConnection()
-    await pool.request()
-        .input('profile_id', sql.VarChar, req.body.profile_id)
-        .input('seat_id', sql.VarChar, req.body.seat_id)
-        .query(querys.createTicket)
-    res.json('New Ticket Created')
+        await pool.request()
+            .input('profile_id', sql.VarChar, req.body.profile_id)
+            .input('seat_id', sql.VarChar, req.body.seat_id)
+            .input('seat_status', sql.Bit, 0)
+            .query(querys.createTicket && querys.updateSeatStatus)
+        res.json('New Ticket Created')
     } catch (error) {
         res.status(500)
-        res.send(error.message)       
+        res.send(error.message)
     }
 }
 
@@ -45,15 +46,15 @@ export const updateTicket = (req, res) => {
 }
 
 export const deleteTicket = async (req, res) => {
-   try {
-    const pool = await getConnection()
-    await pool.request()
-        .input('ticket_id', sql.VarChar, req.params.ticket_id)
-        .query(querys.deleteTicket)
-    res.json('Ticket Deleted')
+    try {
+        const pool = await getConnection()
+        await pool.request()
+            .input('ticket_id', sql.VarChar, req.params.ticket_id)
+            .query(querys.deleteTicket)
+        res.json('Ticket Deleted')
 
-   } catch (error) {
+    } catch (error) {
         res.status(500)
-        res.send(error.message)    
-   }
+        res.send(error.message)
+    }
 }
