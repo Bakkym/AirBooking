@@ -1,0 +1,326 @@
+{
+	"info": {
+		"_postman_id": "6a2d444a-271f-4fe4-ace1-eadcba76269f",
+		"name": "AirBooking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "23761203-6a2d444a-271f-4fe4-ace1-eadcba76269f"
+	},
+	"item": [
+		{
+			"name": "Customers",
+			"item": [
+				{
+					"name": "getCustomers",
+					"id": "ce83b203-2d06-4c5c-81d7-6298bc001332",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/customers",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCustomer",
+					"id": "1ffc4ed0-f873-4163-ae8a-a090f6fabc1f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/customers/1027801014",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"customers",
+								"1027801014"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCustomer",
+					"id": "57d71440-125d-42c3-b124-6fe14e8dec71",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/customers/1001418478",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"customers",
+								"1001418478"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createCustomer",
+					"id": "cf4f144d-7d69-43a7-baf8-7330493915c5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"profile_id\":\"101418477\",\r\n    \"customer_name\": \"Juan Camilo\",\r\n    \"address\": \"av #50\",\r\n    \"tel_no\": \"3202720288\",\r\n    \"email\": \"camilo@gmail.com\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/customers",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCostumer",
+					"id": "1d9e87ca-5ddb-4457-9781-5490c74911e5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customer_name\": \"Juan Camilo Barrientos Herrera\",\r\n    \"address\": \"av #50\",\r\n    \"tel_no\": \"3202720288\",\r\n    \"email\": \"camilo@gmail.com\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/customers/101418477",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"customers",
+								"101418477"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "7f1a1360-d813-4c78-9b04-9be95e77db72"
+		},
+		{
+			"name": "Tickets",
+			"item": [
+				{
+					"name": "getTickets",
+					"id": "db92ea9c-b4a9-49de-8cdc-99da541e419d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/tickets",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"tickets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTicket",
+					"id": "56240abc-b06c-4350-bf8f-d097d333472f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/tickets/9",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"tickets",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createTicket",
+					"id": "d52d9222-cb79-425f-b964-fa26620951b5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"profile_id\": \"101418477\",\r\n    \"seat_id\": \"B6\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/tickets",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"tickets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteTicket",
+					"id": "5c9a9903-fc10-4cc4-a308-ea99d190f6fb",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/tickets/9",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"tickets",
+								"9"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "13ead0d5-9985-493e-9238-26b3c902167a"
+		},
+		{
+			"name": "Seats",
+			"item": [
+				{
+					"name": "getAllSeats",
+					"id": "311c072a-4928-40b3-90d6-c70a95b9437b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/seats",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"seats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAvailableSeats",
+					"id": "2b78a750-57d2-4002-a73e-4c924dd89944",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/seats/available",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"seats",
+								"available"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSeat",
+					"id": "691029b4-9238-4ebe-b620-aa690418083c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/seats/B6",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"seats",
+								"B6"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "6c63bde4-a2c8-4513-9279-dd9ac660a9e2"
+		}
+	]
+}

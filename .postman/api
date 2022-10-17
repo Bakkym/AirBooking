@@ -1,0 +1,15 @@
+id = 702df981-12d0-47ae-a1a4-a36565f3b125
+
+[relations]
+
+[relations.collections]
+rootDirectory = postman/collections
+files[] = {"id":"23761203-6a2d444a-271f-4fe4-ace1-eadcba76269f","path":"AirBooking.json","metaData":{}}
+
+[relations.collections.metaData]
+
+[relations.apiDefinition]
+rootDirectory = postman/schemas
+
+[relations.apiDefinition.metaData]
+type = openapi:3
