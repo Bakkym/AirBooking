@@ -4,7 +4,9 @@
 ![image](https://user-images.githubusercontent.com/92707871/196214722-3f65d8d0-3fa9-4cef-8016-5cf4ff3bd9c0.png)
 
 ### API ENDPOINTS
-![image](https://user-images.githubusercontent.com/92707871/196239339-37492ae0-995f-4f73-8b1d-cc3c7b43eaa1.png)
+![image](https://user-images.githubusercontent.com/92707871/196240649-60520d83-f37c-48ba-9163-6c67d3241a26.png)
+
+### API ENDPOINTS JSON
 
 ```json
 {
