@@ -48,8 +48,24 @@ export const createCustomer = async (req, res) => {
 
 }
 
-export const updateCustomer = (req, res) => {
-    res.json('update Customer')
+export const updateCustomer = async (req, res) => {
+    try {
+        const pool = await getConnection()
+        await pool.request()
+            .input('profile_id', sql.VarChar, req.params.profile_id)
+            .input("customer_name", sql.VarChar, req.body.customer_name)
+            .input("address", sql.VarChar, req.body.address)
+            .input("tel_no", sql.VarChar, req.body.tel_no)
+            .input("email", sql.VarChar, req.body.email)
+            .query(querys.updateCustomer)
+
+        res.json('Customer Updated')
+
+    } catch (error) {
+        res.status(500)
+        res.send(error.message)
+    }
+
 }
 
 export const deleteCustomer = async (req, res) => {

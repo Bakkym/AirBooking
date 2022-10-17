@@ -1,7 +1,8 @@
 import express from 'express';
 import config from './config';
 
-import costumesRoutes from './routes/customers.routes';
+import customersRoutes from './routes/customers.routes';
+import ticketsRoutes from './routes/tickets.routes';
 
 const app = express();
 
@@ -13,7 +14,8 @@ app.set('port', config.port);
 app.use(express.json());
 app.use(express.urlencoded({  extended: false  }));
  
-app.use(costumesRoutes);
+app.use(customersRoutes);
+app.use(ticketsRoutes);
 
 export default app
 
