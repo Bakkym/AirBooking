@@ -32,7 +32,7 @@ export const createTicket = async (req, res) => {
             .input('profile_id', sql.VarChar, req.body.profile_id)
             .input('seat_id', sql.VarChar, req.body.seat_id)
             .input('seat_status', sql.Bit, 0)
-            .query(querys.createTicket && querys.updateSeatStatus)
+            .query(querys.createTicket)
         res.json('New Ticket Created')
     } catch (error) {
         res.status(500)
