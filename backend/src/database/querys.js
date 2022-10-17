@@ -15,7 +15,8 @@ export const querys = {
     createTicket:
     'INSERT INTO Tickets_Info (profile_id, seat_id) VALUES (@profile_id, @seat_id); UPDATE Seats SET status = @seat_status WHERE seat_id = @seat_id',
     deleteTicket:
-     'DELETE FROM Tickets_Info WHERE ticket_id = @ticket_id; UPDATE Seats SET status = @seat_status WHERE seat_id = @seat_id',
+    'DELETE FROM Tickets_Info WHERE ticket_id = @ticket_id; UPDATE Seats SET status = @seat_status WHERE seat_id = @seat_id',
+    deleteAllTicketbyProfile_id: 'DELETE FROM Tickets_Info WHERE profile_id = @profile_id',
 
     // Seats
     getAllSeats: 'SELECT * FROM Seats',
