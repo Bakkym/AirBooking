@@ -48,10 +48,16 @@ export const updateTicket = (req, res) => {
 export const deleteTicket = async (req, res) => {
     try {
         const pool = await getConnection()
+        const seat_id = await pool.request()
+            .input('ticket_id', sql.VarChar, req.params.ticket_id)
+            .query(querys.getTicket_SeatId)
+
         await pool.request()
             .input('ticket_id', sql.VarChar, req.params.ticket_id)
+            .input('seat_id', sql.VarChar, seat_id.recordset[0].seat_id)
+            .input('seat_status', sql.Bit, 1)
             .query(querys.deleteTicket)
-        res.json('Ticket Deleted')
+        res.json('Ticket Deleted and Seat Status Updated')
 
     } catch (error) {
         res.status(500)
