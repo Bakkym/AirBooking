@@ -10,7 +10,7 @@
 {
   "item": [
     {
-      "name": "Customes",
+      "name": "Customers",
       "item": [
         {
           "name": "getCustomers",
