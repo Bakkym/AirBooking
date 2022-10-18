@@ -27,5 +27,7 @@ export const querys = {
     //Middeleware
     countTicketsperCustomer: 'SELECT COUNT(*) as count FROM Tickets_info where profile_id = @profile_id',
 
+    //Details
+    getDetailsbyProfileId: 'SELECT * FROM Tickets_info where profile_id = @profile_id',
 
 }
