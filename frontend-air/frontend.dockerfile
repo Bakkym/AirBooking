@@ -6,13 +6,13 @@ RUN mkdir -p /app
 WORKDIR /app
 
 # Copy the app package and package-lock.json file
-COPY backend/package*.json ./
+COPY frontend-air/package*.json ./
 
 # Install node packages
 RUN npm install
 
 # Copy or project directory (locally) in the current directory of our docker image (/app)
-COPY backend/ .
+COPY frontend-air/ .
 
-EXPOSE 3001
+EXPOSE 5173
 CMD [ "npm", "run", "dev" ]
