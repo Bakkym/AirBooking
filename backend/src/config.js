@@ -7,5 +7,7 @@ export default {
     dbPassword: process.env.DB_PASSWORD || "",
     dbServer: process.env.DB_SERVER || "",
     dbDatabase: process.env.DB_DATABASE || "",
+    gmEmail: process.env.GMAIL_EMAIL || "",
+    gmPassword: process.env.GMAIL_PASSWORD || "",
     
 }

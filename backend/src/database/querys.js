@@ -29,5 +29,6 @@ export const querys = {
 
     //Details
     getDetailsbyProfileId: 'SELECT * FROM Tickets_info where profile_id = @profile_id',
+    getEmailbyProfileId: 'SELECT email FROM Customers where profile_id = @profile_id'
 
 }
