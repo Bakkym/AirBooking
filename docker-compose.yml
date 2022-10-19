@@ -1,0 +1,13 @@
+version: '3'
+services:
+  airbooking-web-frontend:
+    image: airbooking-frontend:latest
+    environment:
+      PORT: 5173
+      PROXY_API: http://airbooking-backend:3001/
+    ports:
+      - 5173:5173
+  airbooking-web-backend:
+    image: airbooking-backend:latest
+    ports:
+      - 3001:3001
