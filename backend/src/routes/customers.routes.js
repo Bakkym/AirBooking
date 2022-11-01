@@ -3,11 +3,10 @@ import { getCustomers, getCustomer, createCustomer, updateCustomer, deleteCustom
 
 const router = Router()
 
-router.get('/customers', getCustomers)
-router.get('/customers/:profile_id', getCustomer)
-router.post('/customers', createCustomer)
-router.post('/count')
-router.put('/customers/:profile_id', updateCustomer)
-router.delete('/customers/:profile_id', deleteCustomer)
+router.get('/', getCustomers)
+router.get('/:profile_id', getCustomer)
+router.post('/', createCustomer)
+router.put('/:profile_id', updateCustomer)
+router.delete('/:profile_id', deleteCustomer)
 
 export default router
