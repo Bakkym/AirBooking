@@ -1,11 +1,11 @@
 import { getConnection, sql, querys } from '../database'
 
 
-export const getAllSeats = async (req, res) => {
+export const getAllSeats = async(req, res) => {
     try {
         const pool = await getConnection()
         const result = await pool.request().query(querys.getAllSeats)
-        res.json(result.recordsets)
+        res.json(result.recordsets[0])
     } catch (error) {
         res.status(500)
         res.send(error.message)
@@ -13,7 +13,7 @@ export const getAllSeats = async (req, res) => {
     }
 }
 
-export const getAllAvailableSeats = async (req, res) => {
+export const getAllAvailableSeats = async(req, res) => {
     try {
         const pool = await getConnection()
         const result = await pool.request().query(querys.getAllAvailableSeats)
@@ -24,11 +24,11 @@ export const getAllAvailableSeats = async (req, res) => {
     }
 }
 
-export const getSeat = async (req, res) => {
+export const getSeat = async(req, res) => {
     const pool = await getConnection()
     const result = await pool.request()
-    .input('seat_id', sql.VarChar, req.params.seat_id)
-    .query(querys.getSeat)
+        .input('seat_id', sql.VarChar, req.params.seat_id)
+        .query(querys.getSeat)
     res.json(result.recordset[0])
 
 }

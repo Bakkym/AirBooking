@@ -1,0 +1,21 @@
+* {
+    box-sizing: border-box;
+}
+
+main {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    width: 900px;
+}
+
+.box {
+    height: 70px;
+    width: 70px;
+    border: 1px solid black;
+    text-align: center;
+    margin-right: 4px;
+    border-radius: 5px;
+}
