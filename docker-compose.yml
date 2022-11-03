@@ -1,0 +1,13 @@
+version: '3'
+services:
+  airbooking-web-frontend:
+    image: bakkym/airbooking-frontend:1.0.0
+    environment:
+      PORT: 3000
+      PROXY_API: http://airbooking-backend:3001/
+    ports:
+      - 3000:3000
+  airbooking-web-backend:
+    image: bakkym/airbooking-backend:1.0.0
+    ports:
+      - 3001:3001

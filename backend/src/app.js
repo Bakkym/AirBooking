@@ -10,13 +10,6 @@ import detailsRoutes from './routes/details.routes';
 const app = express();
 
 
-var corsOptions = {
-    origin: 'http://localhost:3000',
-    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-}
-
-
-
 // settings
 app.set('port', config.port);
 
@@ -24,9 +17,9 @@ app.set('port', config.port);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use('/customers', cors(corsOptions), customersRoutes);
-app.use(cors(corsOptions), ticketsRoutes);
-app.use(cors(corsOptions), seatsRoutes);
-app.use(cors(corsOptions), detailsRoutes)
+app.use(customersRoutes);
+app.use(ticketsRoutes);
+app.use(seatsRoutes);
+app.use(detailsRoutes)
 
 export default app
